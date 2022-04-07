@@ -1,0 +1,19 @@
+name: CI
+
+on:
+  push:
+    branches: [ release-2020 ]
+  pull_request:
+    branches: [ release-2020 ]
+
+  workflow_dispatch:
+
+jobs:
+  install-dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Update and Install CMake
+        run: |
+          sudo apt-get update
+          sudo apt-get install cmake -y
