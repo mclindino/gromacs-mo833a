@@ -1,0 +1,23 @@
+name: Gromacs
+
+on:
+  push:
+    branches: [ release-2020 ]
+  pull_request:
+    branches: [ release-2020 ]
+
+  workflow_dispatch:
+
+jobs:
+  install-dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Update and Install CMake
+        run: |
+          sudo apt-get update
+          sudo apt-get install cmake -y
+          mkdir build
+          cd build
+          cmake .. -DGMX_BUILD_OWN_FFTW=ON -DREGRESSIONTEST_DOWNLOAD=ON
+          make
