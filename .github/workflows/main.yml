@@ -1,0 +1,29 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  install-dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update and Install CMake
+      - run: |
+          sudo apt-get update
+          sudo apt-get install cmake -y
+  
+  create-makefile:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create folder and Makefile
+      - run: |
+          mkdir build
+          cd build
+          cmake .. -DGMX_BUILD_OWN_FFTW=ON -DREGRESSIONTEST_DOWNLOAD=ON
+  
+  build-gromacs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Gromacs
+      - run: |
+          make
+          make check
