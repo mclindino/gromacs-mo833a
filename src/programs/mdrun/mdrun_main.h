@@ -35,6 +35,8 @@
 #ifndef GMX_PROGRAMS_MDRUN_MDRUN_H
 #define GMX_PROGRAMS_MDRUN_MDRUN_H
 
+double mysecond();
+
 namespace gmx
 {
 

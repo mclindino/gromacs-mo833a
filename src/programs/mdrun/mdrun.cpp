@@ -70,6 +70,17 @@
 
 #include "mdrun_main.h"
 
+// Matheus Lindino - Time Measuring
+	#include <sys/time.h>
+	double mysecond()
+	{
+		struct timeval tp;
+		struct timezone tzp;
+		gettimeofday(&tp, &tzp);
+		return ((double) tp.tv_sec + (double) tp.tv_usec * 1.e-6);
+	}
+
+
 namespace gmx
 {
 
@@ -267,7 +278,16 @@ int gmx_mdrun(int argc, char* argv[])
 
     auto runner = builder.build();
 
-    return runner.mdrunner();
+//Matheus Lindino - Time Measuring
+	double init, end;
+	init = mysecond();
+	auto r = runner.mdrunner();
+	end = mysecond();
+	double elapsed = end - init;
+	printf("[MO833]: runner.mdrunner() exec. time: %f \n\n", elapsed);
+	return r;
+
+//    return runner.mdrunner();
 }
 
 } // namespace gmx
