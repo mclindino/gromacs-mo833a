@@ -30,7 +30,7 @@ GROMACS:      gmx mdrun, version 2020.2-dev-20220407-60b5b8cc3-unknown
 Executable:   /usr/local/gromacs/bin/gmx
 Data prefix:  /usr/local/gromacs
 Working dir:  /home/gromacs-mo833a/experiments
-Process ID:   152
+Process ID:   384
 Command line:
   gmx mdrun -v -deffnm em
 
@@ -58,9 +58,9 @@ Running on 1 node with total 8 cores, 8 logical cores
 Hardware detected:
   CPU info:
     Vendor: Intel
-    Brand:  Intel(R) Core(TM) i7-4910MQ CPU @ 2.90GHz
-    Family: 6   Model: 60   Stepping: 3
-    Features: aes apic avx avx2 clfsh cmov cx8 cx16 f16c fma htt intel lahf mmx msr nonstop_tsc pcid pclmuldq pdcm pdpe1gb popcnt pse rdrnd rdtscp sse2 sse3 sse4.1 sse4.2 ssse3 tdt x2apic
+    Brand:  Intel(R) Core(TM) i5-8265U CPU @ 1.60GHz
+    Family: 6   Model: 142   Stepping: 12
+    Features: aes apic avx avx2 clfsh cmov cx8 cx16 f16c fma htt intel lahf mmx msr pcid pclmuldq pdpe1gb popcnt pse rdrnd rdtscp sse2 sse3 sse4.1 sse4.2 ssse3
   Hardware topology: Only logical processor count
 
 
@@ -322,7 +322,7 @@ J. Comp. Chem. 13 (1992) pp. 952-962
 
 Note that activating steepest-descent energy minimization via the integrator .mdp option and the command gmx mdrun may be available in a different form in a future version of GROMACS, e.g. gmx minimize and an .mdp option.
 Initiating Steepest Descents
-Started Steepest Descents on rank 0 Thu Apr 28 00:25:35 2022
+Started Steepest Descents on rank 0 Thu Apr 28 12:25:47 2022
 
 
 Steepest Descents:
@@ -7725,5 +7725,5 @@ Steepest Descents converged to Fmax < 1000 in 954 steps
 Potential Energy  = -1.0163225e+06
 Maximum force     =  8.0377374e+02 on atom 1093
 Norm of force     =  3.8674947e+01
-Finished mdrun on rank 0 Thu Apr 28 02:40:24 2022
+Finished mdrun on rank 0 Thu Apr 28 12:26:20 2022
 
